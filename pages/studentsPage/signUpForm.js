@@ -1,4 +1,6 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
+import SignUpAuth from "./signUpAuth";
+import Link from "next/link";
 function SignUp() {
   let faceio;
   // useEffect(()=>{
@@ -19,7 +21,7 @@ function SignUp() {
   //   e.preventDefault()
   //   handlSignIn(payload)
   // }
-  
+
   return (
     <div className="signUp">
       <div className="signUpHeader">
@@ -89,7 +91,7 @@ function SignUp() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M12 18.4853L16.2426 14.2426C18.5858 11.8995 18.5858 8.10051 16.2426 5.75736C13.8995 3.41421 10.1005 3.41421 7.75736 5.75736C5.41421 8.10051 5.41421 11.8995 7.75736 14.2426L12 18.4853ZM17.6569 15.6569L12 21.3137L6.34315 15.6569C3.21895 12.5327 3.21895 7.46734 6.34315 4.34315C9.46734 1.21895 14.5327 1.21895 17.6569 4.34315C20.781 7.46734 20.781 12.5327 17.6569 15.6569ZM5 22H19V24H5V22Z"
+                d="M12 2L0 9L12 16L22 10.1667V17.5H24V9L12 2ZM3.99902 13.4905V18.0001C5.82344 20.429 8.72812 22.0001 11.9998 22.0001C15.2714 22.0001 18.1761 20.429 20.0005 18.0001L20.0001 13.4913L12.0003 18.1579L3.99902 13.4905Z"
                 fill="#00923F"
               />
             </svg>
@@ -106,7 +108,7 @@ function SignUp() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"
+                d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"
                 fill="#00923F"
               />
             </svg>
@@ -114,9 +116,34 @@ function SignUp() {
           </label>
           <input type="text" placeholder=" Enter your Department" />
 
-       <div className="signUpHeader"> 
-       <button className="save">Save info</button>
-       </div>
+          <label for="sex">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"
+                fill="#00923F"
+              />
+            </svg>
+            Sex
+          </label>
+          <div className="sexOption">
+         <select>
+          <option>Male</option>
+          <option>Female</option>
+         </select>
+          </div>
+
+          <div className="signUpHeader">
+            <Link href="./signUpAuth">
+              {" "}
+              <button className="signUpBtn">Save info</button>
+            </Link>
+          </div>
         </form>
       </div>
     </div>
