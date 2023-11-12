@@ -27,10 +27,10 @@ function SignUp() {
         <div style={{ margin: "2.5rem 0", marginBottom: "1rem" }}>
           {" "}
           <Link href="/studentsPage/signUp/signUpForm">
-            <button>Sign In as Student</button>
+            <button className="signUpBtn">Sign In as Student</button>
           </Link>
           <Link href="#">
-            <button>Sign In as Lecturer</button>
+            <button className="signUpBtn">Sign In as Lecturer</button>
           </Link>
         </div>
         <h3>Sign Up As Lecturer</h3>

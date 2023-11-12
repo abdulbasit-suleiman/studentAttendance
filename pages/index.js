@@ -6,7 +6,7 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowSplash(false);
-    }, 2000);
+    }, 4000);
     return () => clearTimeout(timeout);
   }, []);
   return <div className="home">{showSplash?(<Splash />):<SignUp />}</div>;
