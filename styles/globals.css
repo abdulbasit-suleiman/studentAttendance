@@ -9,12 +9,7 @@ body {
 /* INDEX PAGE */
 .home {
   display: flex;
-  /* flex-direction: row; */
-flex-direction: column;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  flex-direction: column;
 }
 
 /* STUDENT SPLASH PAGE */
@@ -22,6 +17,14 @@ flex-direction: column;
 .splash {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left:50%;
+  text-align: center;
+}
+.splash>h4{
+  margin-left: -1rem;
 }
 .bold-text {
   font-size: 12px;
@@ -49,7 +52,21 @@ flex-direction: column;
   font-size: 1.3rem;
   font-weight: 700;
 }
-
+.signUpHeader > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+}
+.signUpHeader > div > button {
+  padding: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #319f43;
+  font-size: 0.8rem;
+  border-radius: 7px;
+}
 .signUpForm {
   margin: 2rem 0.5rem;
   margin-right: 2rem;
@@ -78,13 +95,13 @@ label {
   color: white;
   background: #319f43;
   border-radius: 9px;
-  padding: 0.7rem 2.4rem;
+  padding: 0.9rem 2.3rem;
   outline: none;
   border: none;
 }
-.sexOption>select{
+.sexOption > select {
   width: 100%;
-  padding: 0.7rem ;
+  padding: 0.7rem;
   background: #efefef;
   border-radius: 5px;
   border: none;

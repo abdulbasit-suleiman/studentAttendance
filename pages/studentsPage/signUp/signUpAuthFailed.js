@@ -1,9 +1,11 @@
+import Image from "next/image";
+const Logo = "/asset/logo.svg";
 function SignUpAuthFailed() {
   return (
     <div className="signUpAuthFailed">
       <div className="signUpHeader">
         <h3>Sign Up</h3>
-        <img src="../asset/logo.svg" />
+        <Image src={Logo} alt="" width={100} height={100} />
         <h4 className="bold-text">Student Attendance</h4>
         <h4 className="bold-text" style={{ margin: "1rem .3rem" }}>
           Face Recognition

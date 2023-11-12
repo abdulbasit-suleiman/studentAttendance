@@ -1,33 +1,39 @@
 import { useEffect, useState } from "react";
-import SignUpAuth from "./signUpAuth";
 import Link from "next/link";
-function SignUp() {
-  let faceio;
-  // useEffect(()=>{
-  //   faceio= new faceio('xxxxxxxx')
-  // }, [])
-  // const [payload, setPayload]=useState({
-  //   userEmail:'',
-  //   pin:'',
-  // })
-  // const onChange=(e)=>{
-  //   setPayload({
-  //     ...payload,
-  //     [e.target.name]:e.target.value,
-  //   })
-  // }
-  // const handleSubmit=(e)=>{
-  //   // prevent refresh
-  //   e.preventDefault()
-  //   handlSignIn(payload)
-  // }
+import Image from "next/image";
+import { auth } from "@/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+const Logo = "/asset/logo.svg";
 
+
+function SignUp() {
+  const [matricNo, setMatricNo] = useState("");
+  const signUp = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
-    <div className="signUp">
+    <div className="signUp" onSubmit={signUp}>
       <div className="signUpHeader">
-        <h3>Sign Up</h3>
-        <img src="../asset/logo.svg" />
+        <Image src={Logo} alt="" width={100} height={100} />
         <h4 className="bold-text">Student Attendance</h4>
+        <h3 style={{ margin: "2.2rem 0" }}>Sign In</h3>
+        <div style={{ margin: "2.5rem 0", marginBottom: "1rem" }}>
+          {" "}
+          <Link href="/studentsPage/signUp/signUpForm">
+            <button>Sign In as Student</button>
+          </Link>
+          <Link href="#">
+            <button>Sign In as Lecturer</button>
+          </Link>
+        </div>
+        <h3>Sign Up As Lecturer</h3>
       </div>
       <div className="signUpForm">
         <form>
@@ -48,23 +54,6 @@ function SignUp() {
           </label>
           <input type="text" placeholder="Enter Full Name" />
 
-          <label for="matricNo">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.0009 17C15.6633 17 18.8659 18.5751 20.608 20.9247L18.766 21.796C17.3482 20.1157 14.8483 19 12.0009 19C9.15346 19 6.6535 20.1157 5.23577 21.796L3.39453 20.9238C5.13673 18.5747 8.33894 17 12.0009 17ZM12.0009 2C14.7623 2 17.0009 4.23858 17.0009 7V10C17.0009 12.7614 14.7623 15 12.0009 15C9.23945 15 7.00087 12.7614 7.00087 10V7C7.00087 4.23858 9.23945 2 12.0009 2Z"
-                fill="#00923F"
-              />
-            </svg>
-            Matric Number
-          </label>
-          <input type="text" placeholder="Enter your matric no" />
-
           <label for="schoolmailAcc">
             <svg
               width="24"
@@ -78,7 +67,7 @@ function SignUp() {
                 fill="#00923F"
               />
             </svg>
-            School Mail Account
+            Email Account
           </label>
           <input type="email" placeholder=" Enter School Account" />
 
@@ -132,10 +121,10 @@ function SignUp() {
             Sex
           </label>
           <div className="sexOption">
-         <select>
-          <option>Male</option>
-          <option>Female</option>
-         </select>
+            <select>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
           </div>
 
           <div className="signUpHeader">

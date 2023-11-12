@@ -1,9 +1,13 @@
+import { useEffect, useState } from "react";
 import Splash from "./studentsPage/studentSplash";
-
+import SignUp from "./studentsPage/signUp/signUpForm";
 export default function Home() {
-  return (
-   <div className="home" style={{width:'10rem' , justifyContent:'center' ,textAlign:"center"}} >
-<Splash />
-   </div>
-  )
+  const [showSplash, setShowSplash] = useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowSplash(false);
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, []);
+  return <div className="home">{showSplash?(<Splash />):<SignUp />}</div>;
 }
