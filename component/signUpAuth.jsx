@@ -11,9 +11,10 @@ const SignUpAuthCapture = () => {
 
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
+          videoRef.current.play().then(() => {
+            captureImage();
+          });
         }
-
-        captureImage();
       } catch (error) {
         console.error('Error accessing camera:', error);
       }
@@ -25,6 +26,10 @@ const SignUpAuthCapture = () => {
         const canvas = canvasRef.current;
 
         if (video && canvas) {
+          // Set the canvas dimensions to match the video dimensions
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+
           const context = canvas.getContext('2d');
           context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
@@ -38,7 +43,7 @@ const SignUpAuthCapture = () => {
 
           // In a real application, you might want to send this image data to a server for saving.
         }
-      }, 3000);
+      }, 1000);
     };
 
     initCamera();
@@ -60,7 +65,7 @@ const SignUpAuthCapture = () => {
     <div>
       <h1>Camera Capture</h1>
       <video ref={videoRef} autoPlay playsInline muted style={{ display: 'none' }} />
-      <canvas ref={canvasRef} width={640} height={480} style={{ display: 'none' }} />
+      <canvas ref={canvasRef} style={{ display: 'none' }} />
     </div>
   );
 };
