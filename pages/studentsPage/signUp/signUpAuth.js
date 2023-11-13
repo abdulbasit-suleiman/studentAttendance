@@ -1,3 +1,4 @@
+import SignUpAuthCapture from "@/component/signUpAuth";
 import Image from "next/image";
 
 const Logo = "/asset/logo.svg";
@@ -10,7 +11,9 @@ function SignUpAuth() {
         <h4 className="bold-text">Student Attendance</h4>
         <h4 className="bold-text">Face Recognition</h4>
       </div>
-      <div></div>
+      <div>
+      <SignUpAuthCapture />
+      </div>
     </div>
   );
 }
