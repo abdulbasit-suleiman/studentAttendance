@@ -858,6 +858,11 @@ tr46@~0.0.3:
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
 
+tracking@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/tracking/-/tracking-1.1.3.tgz#cefd39b7175f96de1723d288ff15f28887b9db82"
+  integrity sha512-XS9CVMzjp6AHT5e7oRamU8U5Lz3k6BIRTkBVs0XqepwgwXQ4kbbmxrWzTG2v6RMvJC/9MKuSBQiX/5hwsQFcCQ==
+
 tslib@^1.11.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"

@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import SignUpAuth from "./signUpAuth";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { auth } from "@/firebase";
