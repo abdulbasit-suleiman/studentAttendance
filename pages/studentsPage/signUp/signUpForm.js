@@ -24,15 +24,7 @@ function SignUp() {
         <Image src={Logo} alt="" width={100} height={100} />
         <h4 className="bold-text">Student Attendance</h4>
         <h3 style={{ margin: "2.2rem 0" }}>Sign In</h3>
-        <div style={{ margin: "2.5rem 0", marginBottom: "1rem" }}>
-          {" "}
-          <Link href="#">
-            <button className="signUpBtn">Sign In as Student</button>
-          </Link>
-          <Link href="/lecturersPage/signUp/signUpForm">
-            <button className="signUpBtn">Sign In as Lecturer</button>
-          </Link>
-        </div>
+    
         <h3>Sign Up As Student</h3>
       </div>
       <div className="signUpForm">

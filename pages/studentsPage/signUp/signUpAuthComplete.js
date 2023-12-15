@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Logo="/asset/logo.svg"
 function SignUpAuthComplete() {
@@ -29,7 +30,8 @@ function SignUpAuthComplete() {
         </svg>
         <div className="completeAuth">
             <h4>Authentication Complete</h4>
-            <button className="signUpBtn">Proceed</button>
+            <button className="signUpBtn" ><Link  href="/studentsPage/signIn/signInOptions">Proceed</Link></button>
+            
         </div>
       </div>
     </div>
